@@ -1,0 +1,90 @@
+[gd_scene format=4 uid="uid://dh8sa8vgypoav"]
+
+[ext_resource type="Texture2D" uid="uid://dyomk8e3iu4kv" path="res://Assets/Sprites/Backgrounds/Brown Background.png" id="1_jaajx"]
+[ext_resource type="Texture2D" uid="uid://bsiyrkjh62u5v" path="res://Assets/Sprites/TileMap/Tilemap.png" id="2_mrxql"]
+[ext_resource type="PackedScene" uid="uid://dcx03getgkg0k" path="res://Scenes/Player.tscn" id="3_qrg6c"]
+[ext_resource type="PackedScene" uid="uid://bk3gch0livbn3" path="res://Scenes/gold.tscn" id="5_h3ll2"]
+[ext_resource type="PackedScene" uid="uid://dtu0sra2pnxk2" path="res://Scenes/moving_platform.tscn" id="5_jaajx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5f4k"]
+texture = ExtResource("2_mrxql")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.78346443, 0.26115417, 0.43525887, 0.08705139, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.43525887, -8, 0.26115608)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.78346443, -8, 1.1316719, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.3057747, -8, 8, -8, 8, 8, -0.9575672, 8)
+3:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.9575672, 8, -0.78346443, 8, 7.2252846, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.60936165, -8, -0.43525887, -1.4798775, -8, -0.60936165, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_xsvro"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_k5f4k")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsvro"]
+size = Vector2(20, 146)
+
+[node name="Level" type="Node2D" unique_id=440429095]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1396514096]
+texture_filter = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_jaajx")
+stretch_mode = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1757864242]
+texture_filter = 1
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAAAAsAAAAAAAAAAAABAA4AAAABAAIAAAACAA4AAAABAAIAAAADAA4AAAABAAIAAAAEAA4AAAABAAIAAAAFAA4AAAABAAIAAAAGAA4AAAABAAIAAAAHAA4AAAABAAIAAAAIAA4AAAABAAIAAAAJAA4AAAABAAIAAAAKAA4AAAABAAIAAAALAA4AAAABAAIAAAAaAAQAAAACAAAAAAAaAAAAAAACAAAAAAAWAAAAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAZAAAAAAABAAAAAAAVAAAAAAABAAAAAAAUAAAAAAABAAAAAAATAAAAAAABAAAAAAASAAAAAAABAAAAAAARAAAAAAABAAAAAAAQAAAAAAABAAAAAAAPAAAAAAABAAAAAAAaAAUAAAACAAIAAAAZAAQAAAABAAAAAAAYAAQAAAABAAAAAAAXAAQAAAAAAAAAAAAXAAUAAAAAAAIAAAAZAAUAAAABAAIAAAAYAAUAAAABAAIAAAAAAAcAAAAAAAEAAAAAAA4AAAABAAIAAAAMAA4AAAABAAIAAAANAA4AAAABAAIAAAAOAA4AAAABAAIAAAAPAA4AAAABAAIAAAAQAA4AAAABAAIAAAARAA4AAAABAAIAAAASAA4AAAABAAIAAAATAA4AAAABAAIAAAAUAA4AAAABAAIAAAAVAA4AAAABAAIAAAAWAA4AAAABAAIAAAAXAA4AAAABAAIAAAAYAA4AAAABAAIAAAAaAA4AAAACAAIAAAAZAA4AAAABAAIAAAAaAA0AAAACAAEAAAAaAAwAAAACAAEAAAAaAAsAAAACAAEAAAAaAAoAAAACAAEAAAAaAAkAAAACAAEAAAAaAAgAAAACAAEAAAAaAAcAAAACAAEAAAAaAAYAAAACAAEAAAAOAAAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_xsvro")
+
+[node name="Player" parent="." unique_id=145208323 instance=ExtResource("3_qrg6c")]
+position = Vector2(49, 632)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=550909213]
+
+[node name="Golds" type="Node2D" parent="." unique_id=1159542324]
+
+[node name="Gold" parent="Golds" unique_id=1733027953 instance=ExtResource("5_h3ll2")]
+position = Vector2(833, 110.000015)
+
+[node name="Gold2" parent="Golds" unique_id=1388822345 instance=ExtResource("5_h3ll2")]
+position = Vector2(1057, 629)
+
+[node name="Gold3" parent="Golds" unique_id=568704847 instance=ExtResource("5_h3ll2")]
+position = Vector2(56.000122, 497)
+
+[node name="Exit" type="Area2D" parent="." unique_id=168881604]
+position = Vector2(1285, 158)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=852379182]
+position = Vector2(5, -39)
+shape = SubResource("RectangleShape2D_xsvro")
+
+[node name="Moving Platforms" type="Node" parent="." unique_id=472979747]
+
+[node name="MovingPlatform" parent="Moving Platforms" unique_id=1566927656 instance=ExtResource("5_jaajx")]
+position = Vector2(395, 552)
+
+[node name="MovingPlatform2" parent="Moving Platforms" unique_id=1589429010 instance=ExtResource("5_jaajx")]
+position = Vector2(596, 433)
+
+[node name="MovingPlatform3" parent="Moving Platforms" unique_id=773349887 instance=ExtResource("5_jaajx")]
+position = Vector2(250, 343)
+
+[node name="MovingPlatform4" parent="Moving Platforms" unique_id=605980580 instance=ExtResource("5_jaajx")]
+position = Vector2(615, 234)
+
+[node name="MovingPlatform5" parent="Moving Platforms" unique_id=1275756644 instance=ExtResource("5_jaajx")]
+position = Vector2(877, 203)

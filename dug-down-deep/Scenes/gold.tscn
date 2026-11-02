@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bk3gch0livbn3"]
+
+[ext_resource type="Texture2D" uid="uid://rwjx0vfmlu72" path="res://icon.svg" id="1_5fbmp"]
+[ext_resource type="Script" uid="uid://bso1mm5l0fp0w" path="res://scripts/gold.gd" id="1_f32ux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f32ux"]
+atlas = ExtResource("1_5fbmp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lqfo"]
+atlas = ExtResource("1_5fbmp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4j6m"]
+atlas = ExtResource("1_5fbmp")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jneoo"]
+atlas = ExtResource("1_5fbmp")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsvro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f32ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lqfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4j6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jneoo")
+}],
+"loop": 1,
+"name": &"collected",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5fbmp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f811i"]
+size = Vector2(125, 128)
+
+[node name="Gold" type="Area2D" unique_id=1733027953]
+scale = Vector2(0.33, 0.33)
+script = ExtResource("1_f32ux")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1152431856]
+sprite_frames = SubResource("SpriteFrames_xsvro")
+animation = &"collected"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=570118605]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_f811i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

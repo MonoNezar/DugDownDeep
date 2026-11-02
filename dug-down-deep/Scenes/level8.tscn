@@ -1,0 +1,172 @@
+[gd_scene format=4 uid="uid://bwylgvu8bwovn"]
+
+[ext_resource type="Texture2D" uid="uid://dyomk8e3iu4kv" path="res://Assets/Sprites/Backgrounds/Brown Background.png" id="1_n3v53"]
+[ext_resource type="Texture2D" uid="uid://bsiyrkjh62u5v" path="res://Assets/Sprites/TileMap/Tilemap.png" id="2_2bm25"]
+[ext_resource type="PackedScene" uid="uid://dcx03getgkg0k" path="res://Scenes/Player.tscn" id="3_qa21w"]
+[ext_resource type="PackedScene" uid="uid://cyt4mwdj0hc2l" path="res://Scenes/rock_enemy.tscn" id="4_2bm25"]
+[ext_resource type="PackedScene" uid="uid://bk3gch0livbn3" path="res://Scenes/gold.tscn" id="4_476sc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5f4k"]
+texture = ExtResource("2_2bm25")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.78346443, 0.26115417, 0.43525887, 0.08705139, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.43525887, -8, 0.26115608)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.78346443, -8, 1.1316719, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.3057747, -8, 8, -8, 8, 8, -0.9575672, 8)
+3:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.9575672, 8, -0.78346443, 8, 7.2252846, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.60936165, -8, -0.43525887, -1.4798775, -8, -0.60936165, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_xsvro"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_k5f4k")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsvro"]
+size = Vector2(193, 25)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsvro"]
+bg_color = Color(0.89554113, 0.41878682, 0.57444704, 1)
+
+[node name="Level" type="Node2D" unique_id=440429095]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1396514096]
+texture_filter = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_n3v53")
+stretch_mode = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1757864242]
+texture_filter = 1
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAABAA4AAAABAAIAAAACAA4AAAABAAIAAAADAA4AAAABAAIAAAAFAA4AAAABAAIAAAAGAA4AAAABAAIAAAAHAA4AAAABAAIAAAAIAA4AAAABAAIAAAAJAA4AAAABAAIAAAAKAA4AAAABAAIAAAAaAAAAAAACAAAAAAAWAAAAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAZAAAAAAABAAAAAAAVAAAAAAABAAAAAAAUAAAAAAABAAAAAAATAAAAAAABAAAAAAASAAAAAAABAAAAAAARAAAAAAABAAAAAAAQAAAAAAABAAAAAAAPAAAAAAABAAAAAAAAAA4AAAAAAAIAAAAPAA4AAAABAAIAAAAQAA4AAAABAAIAAAARAA4AAAABAAIAAAASAA4AAAABAAIAAAATAA4AAAABAAIAAAAUAA4AAAABAAIAAAAVAA4AAAABAAIAAAAWAA4AAAABAAIAAAAXAA4AAAABAAIAAAAYAA4AAAABAAIAAAAaAA4AAAACAAIAAAAZAA4AAAABAAIAAAAaAA0AAAACAAEAAAAaAAwAAAACAAEAAAAaAAsAAAACAAEAAAAaAAoAAAACAAEAAAAaAAkAAAACAAEAAAAaAAgAAAACAAEAAAAaAAcAAAACAAEAAAAaAAYAAAACAAEAAAAEAA4AAAABAAIAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAAaAAUAAAACAAEAAAAaAAQAAAACAAEAAAAKAAAAAAABAAAAAAAaAAMAAAACAAEAAAAaAAIAAAACAAEAAAAaAAEAAAACAAEAAAAAAAoAAAAAAAEAAAAAAAsAAAAAAAEAAAAAAAwAAAAAAAEAAAAAAA0AAAAAAAEAAAALAA4AAAABAAIAAAAOAA4AAAABAAIAAAANAA4AAAABAAIAAAAMAA4AAAABAAIAAAAOAAAAAAABAAAAAAANAAAAAAABAAAAAAAMAAAAAAABAAAAAAALAAAAAAABAAAAAAAOAAYAAAACAAAAAAAMAAYAAAABAAAAAAANAAYAAAABAAAAAAALAAYAAAAAAAAAAAAOAAcAAAACAAEAAAAOAAgAAAACAAEAAAAOAAkAAAACAAEAAAAOAAoAAAACAAIAAAAMAAoAAAABAAIAAAANAAoAAAABAAIAAAALAAoAAAAAAAIAAAALAAkAAAAAAAEAAAALAAgAAAAAAAEAAAALAAcAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_xsvro")
+
+[node name="Player" parent="." unique_id=145208323 instance=ExtResource("3_qa21w")]
+position = Vector2(623, 410)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=550909213]
+
+[node name="Rock" parent="Enemies" unique_id=137162570 instance=ExtResource("4_2bm25")]
+position = Vector2(1220, 657)
+
+[node name="Rock2" parent="Enemies" unique_id=912135799 instance=ExtResource("4_2bm25")]
+position = Vector2(937, 657)
+
+[node name="Rock3" parent="Enemies" unique_id=382075999 instance=ExtResource("4_2bm25")]
+position = Vector2(623, 657)
+
+[node name="Rock4" parent="Enemies" unique_id=218282006 instance=ExtResource("4_2bm25")]
+position = Vector2(289, 657)
+
+[node name="Golds" type="Node2D" parent="." unique_id=1159542324]
+
+[node name="Gold" parent="Golds" unique_id=1733027953 instance=ExtResource("4_476sc")]
+position = Vector2(166, 504)
+
+[node name="Gold2" parent="Golds" unique_id=1388822345 instance=ExtResource("4_476sc")]
+position = Vector2(1071.0001, 625)
+
+[node name="Gold3" parent="Golds" unique_id=568704847 instance=ExtResource("4_476sc")]
+position = Vector2(1192.0001, 195.00002)
+
+[node name="Gold4" parent="Golds" unique_id=1524317440 instance=ExtResource("4_476sc")]
+position = Vector2(221, 580)
+
+[node name="Gold5" parent="Golds" unique_id=1847840238 instance=ExtResource("4_476sc")]
+position = Vector2(869, 444)
+
+[node name="Gold6" parent="Golds" unique_id=1380827884 instance=ExtResource("4_476sc")]
+position = Vector2(1093, 409)
+
+[node name="Gold7" parent="Golds" unique_id=1958595045 instance=ExtResource("4_476sc")]
+position = Vector2(129, 369.00003)
+
+[node name="Gold8" parent="Golds" unique_id=1827209675 instance=ExtResource("4_476sc")]
+position = Vector2(974.00006, 646)
+
+[node name="Gold9" parent="Golds" unique_id=895602928 instance=ExtResource("4_476sc")]
+position = Vector2(393, 306.00003)
+
+[node name="Gold10" parent="Golds" unique_id=2107871927 instance=ExtResource("4_476sc")]
+position = Vector2(115.000015, 556)
+
+[node name="Gold11" parent="Golds" unique_id=1404444936 instance=ExtResource("4_476sc")]
+position = Vector2(780.99994, 613)
+
+[node name="Gold12" parent="Golds" unique_id=1327280592 instance=ExtResource("4_476sc")]
+position = Vector2(966.00006, 354.99997)
+
+[node name="Gold13" parent="Golds" unique_id=789956386 instance=ExtResource("4_476sc")]
+position = Vector2(175.00006, 289)
+
+[node name="Gold14" parent="Golds" unique_id=1041298671 instance=ExtResource("4_476sc")]
+position = Vector2(1141.0001, 570)
+
+[node name="Gold15" parent="Golds" unique_id=1431335125 instance=ExtResource("4_476sc")]
+position = Vector2(528.00006, 601)
+
+[node name="Gold16" parent="Golds" unique_id=745527688 instance=ExtResource("4_476sc")]
+position = Vector2(376.00003, 422.00003)
+
+[node name="Gold17" parent="Golds" unique_id=106292510 instance=ExtResource("4_476sc")]
+position = Vector2(948, 537)
+
+[node name="Gold18" parent="Golds" unique_id=1149803336 instance=ExtResource("4_476sc")]
+position = Vector2(1133.0001, 279)
+
+[node name="Gold19" parent="Golds" unique_id=730608584 instance=ExtResource("4_476sc")]
+position = Vector2(244.99998, 372)
+
+[node name="Gold20" parent="Golds" unique_id=2004381140 instance=ExtResource("4_476sc")]
+position = Vector2(1030, 492.00006)
+
+[node name="Gold21" parent="Golds" unique_id=1175219598 instance=ExtResource("4_476sc")]
+position = Vector2(887, 282)
+
+[node name="Gold22" parent="Golds" unique_id=1077880278 instance=ExtResource("4_476sc")]
+position = Vector2(326, 561)
+
+[node name="Gold23" parent="Golds" unique_id=24235004 instance=ExtResource("4_476sc")]
+position = Vector2(836, 532.00006)
+
+[node name="Gold24" parent="Golds" unique_id=108718270 instance=ExtResource("4_476sc")]
+position = Vector2(781, 370.00003)
+
+[node name="Exit" type="Area2D" parent="." unique_id=168881604]
+position = Vector2(575, -31)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=852379182]
+position = Vector2(47.5, 21.5)
+shape = SubResource("RectangleShape2D_xsvro")
+
+[node name="Moving Platforms" type="Node" parent="." unique_id=472979747]
+
+[node name="Panel" type="Panel" parent="." unique_id=1084300224]
+offset_left = 104.0
+offset_top = 53.0
+offset_right = 1160.0
+offset_bottom = 204.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xsvro")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1571636456]
+layout_mode = 0
+offset_right = 1052.0
+offset_bottom = 151.0
+text = "Thanks For Playing
+This game was made in a few days and I am still learning so I hope you liked it.
+now you are stuck here till I add more levels and functions haha... also so the game won't crash.
+btw the godot icons were supposed to be gold but I didn't have enough time to design them 
+as I made all the pixel art all by myself in a few hours"
+horizontal_alignment = 1
+vertical_alignment = 1
