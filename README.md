@@ -24,14 +24,20 @@ This Game is still in version Beta 0.1v
 so it might have bugs and incomplete levels and also placeholders for now
 
 ---
+## Why I made it:
+ * I made it for terra by Hackclub as my week project, this was a new experience to me as I have never used godot before and had low experience with game making in general. 
+ * also spending time on this project is kinda fun as game making turned out to be so much fun 
+ * I hope you enjoy the game
+---
 ## Upcoming Updates:
-* More art so no placeholders
+* Better difficulty optimization
+* More art so no placeholders.
 * Mobile Optimization.
 * A better level design 
-* More levels
-* A story 
-* Attacking mechanism like a pickaxe to attack the stone enemies
-* Shop to spend your gold
+* More levels.
+* A story .
+* Attacking mechanism like a pickaxe to attack the stone enemies.
+* Shop to spend your gold.
 
 ---
-The Game Design and Code and Pixel art were all made by Mono Nezar 
+The Game Design and Code and Pixel art were all made by Mono Nezar❤️❤️.
