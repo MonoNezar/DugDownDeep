@@ -2,7 +2,7 @@
 
 
 
-# DugDownDeep V0.1
+# DugDownDeep V0.2
 
 A 2D platformer that was made on Godot where you the player is stuck deep underground and trying to get up to the surface by beating the challenge of each platformer level and collecting gold while evading enemies.
 
@@ -12,14 +12,22 @@ A 2D platformer that was made on Godot where you the player is stuck deep underg
 * More moving mechanisms are planned for future updates in the upcoming weeks
 ---
 
+## V0.2 is out here !!!
+* added mobile controls
+* added shading
+* fixed bugs 
+* added a new level with a new gimick!!
+* optimized the difficulty of the levels.
+* added more design to the levels and the gold
+
 ## Where to play
 You can access the game by running it on browser on itch.io on this demo link: [Demo Link](https://mono-nezar.itch.io/dugdowndeep)
 
-Screenshot of the game: ![Screenshot](image.png)
+Screenshot of the game: ![Screenshot](image-1.png)
 
 ---
 
-This Game is still in version Beta 0.1v 
+This Game is still in version Beta 0.2v 
 
 so it might have bugs and incomplete levels and also placeholders for now
 
@@ -30,10 +38,9 @@ so it might have bugs and incomplete levels and also placeholders for now
  * I hope you enjoy the game
 ---
 ## Upcoming Updates:
-* Better difficulty optimization
-* More art so no placeholders.
+* <s>More art so no placeholders.
 * Mobile Optimization.
-* A better level design 
+* A better level design </s>
 * More levels.
 * A story .
 * Attacking mechanism like a pickaxe to attack the stone enemies.
