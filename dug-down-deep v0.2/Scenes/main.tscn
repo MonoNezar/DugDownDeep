@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bbr2kct8grfyu"]
+
+[ext_resource type="Script" uid="uid://c6fadrkrpfylm" path="res://scripts/main.gd" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bds778c0tjsre" path="res://Scenes/level1.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ch6wstjvq8n37" path="res://Scenes/touch_controls.tscn" id="3_8gbba"]
+
+[sub_resource type="Environment" id="Environment_xsvro"]
+background_mode = 3
+tonemap_mode = 1
+glow_enabled = true
+glow_bloom = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f811i"]
+bg_color = Color(0.72961897, 0.25428516, 0.34072432, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[node name="Main" type="Node2D" unique_id=1199753578]
+script = ExtResource("1_bo1nx")
+
+[node name="Level" parent="." unique_id=440429095 instance=ExtResource("2_bo1nx")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=376537234]
+environment = SubResource("Environment_xsvro")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1528945884]
+visible = false
+color = Color(0.7019608, 0.61960787, 0.85882354, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=386862786]
+wait_time = 0.1
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=630556565]
+
+[node name="ScorePanel" type="Panel" parent="HUD" unique_id=739432010]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f811i")
+
+[node name="ScoreLabel" type="Label" parent="HUD/ScorePanel" unique_id=83928230]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -11.5
+offset_right = 35.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Gold: 0"
+
+[node name="Timer" type="Panel" parent="HUD" unique_id=2134223929]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 478.0
+offset_top = 20.0
+offset_right = 638.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f811i")
+
+[node name="TimerLabel" type="Label" parent="HUD/Timer" unique_id=984656535]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -11.5
+offset_right = 35.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "RunTime: 
+00.0 Seconds"
+
+[node name="Death Counter" type="Panel" parent="HUD" unique_id=1458763659]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 180.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_f811i")
+
+[node name="DeathCountLabel" type="Label" parent="HUD/Death Counter" unique_id=899975562]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -11.5
+offset_right = 35.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Death-Counter: 0"
+
+[node name="Fade" type="ColorRect" parent="HUD" unique_id=1420298598]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="." unique_id=1314611450]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Touch Controls" parent="Control" unique_id=1045931138 instance=ExtResource("3_8gbba")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
