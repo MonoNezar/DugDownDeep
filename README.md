@@ -11,6 +11,17 @@ A 2D platformer that was made on Godot where you the player is stuck deep underg
 * Jump on platforms and evade rock enemies and collect gold as you travel from level to level
 * More moving mechanisms are planned for future updates in the upcoming weeks
 ---
+## V0.3 is out here !!!
+* added more levels
+* fixed lighting
+* fixed bugs 
+* added a new levels
+* optimized the difficulty of the levels.
+* added more animations and pickaxe.
+* added a new pixel art font
+* You can use E to start the attacking animation, however attacking and pickaxe are still in development
+
+---
 
 ## V0.2 is out here !!!
 * added mobile controls
@@ -23,7 +34,8 @@ A 2D platformer that was made on Godot where you the player is stuck deep underg
 ## Where to play
 You can access the game by running it on browser on itch.io on this demo link: [Demo Link](https://mono-nezar.itch.io/dugdowndeep)
 
-Screenshot of the game: ![Screenshot](image-1.png)
+Screenshot of the game: <img width="1293" height="720" alt="image" src="https://github.com/user-attachments/assets/a49ae75e-4039-4014-897b-d3724d44fd71" />
+
 
 ---
 
