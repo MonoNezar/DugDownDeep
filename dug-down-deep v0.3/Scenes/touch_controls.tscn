@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ch6wstjvq8n37"]
+
+[ext_resource type="Texture2D" uid="uid://dprjq3mkla5d" path="res://Assets/Sprites/Controls/Controls2.png" id="1_s3nib"]
+[ext_resource type="Texture2D" uid="uid://cubopneaqd7n1" path="res://Assets/Sprites/Controls/Controls1.png" id="2_qpyqi"]
+[ext_resource type="Texture2D" uid="uid://hkrjtjdd26f4" path="res://Assets/Sprites/Controls/Controls3.png" id="3_d52cv"]
+
+[node name="Touch Controls" type="CanvasLayer" unique_id=1045931138]
+
+[node name="Left" type="TouchScreenButton" parent="." unique_id=834622456]
+texture_filter = 1
+position = Vector2(53, 550)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_s3nib")
+action = "Backward"
+
+[node name="Right" type="TouchScreenButton" parent="." unique_id=1343631637]
+texture_filter = 1
+position = Vector2(283, 550)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_qpyqi")
+action = "Forward"
+
+[node name="Jump" type="TouchScreenButton" parent="." unique_id=956026142]
+texture_filter = 1
+position = Vector2(1150, 550)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("3_d52cv")
+action = "Jump"

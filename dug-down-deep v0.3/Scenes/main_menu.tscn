@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bym02orftjrnj"]
+
+[ext_resource type="Script" uid="uid://qvqlra2tn230" path="res://main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://dyomk8e3iu4kv" path="res://Assets/Sprites/Backgrounds/Brown Background.png" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://46c07owibfj7" path="res://Assets/Sprites/Game logo/Game logo design.png" id="3_ce3w2"]
+
+[sub_resource type="FontVariation" id="FontVariation_f811i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsvro"]
+bg_color = Color(0.6979105, 0.43175343, 0.34575158, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[node name="Main Menu" type="Control" unique_id=756612892]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 2
+script = ExtResource("1_28flt")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=889495490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1ehe0")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1611958519]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -379.0
+offset_right = -59.0
+offset_bottom = 160.0
+grow_horizontal = 2
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_ce3w2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1400736090]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = 5.0
+offset_right = 217.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.75, 0.75)
+theme_override_constants/separation = 25
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1902936063]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.41
+theme_override_fonts/font = SubResource("FontVariation_f811i")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsvro")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1086019915]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.41
+theme_override_fonts/font = SubResource("FontVariation_f811i")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsvro")
+text = "Quit Game"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Quit_pressed"]
