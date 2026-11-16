@@ -2,7 +2,7 @@
 
 
 
-# DugDownDeep V0.2
+# DugDownDeep V0.3
 
 A 2D platformer that was made on Godot where you the player is stuck deep underground and trying to get up to the surface by beating the challenge of each platformer level and collecting gold while evading enemies.
 
